@@ -1,0 +1,14 @@
+{
+  "name": "cypress-template",
+  "version": "1.0.0",
+  "private": true,
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "yarn run typecheck"
+    ]
+  },
+  "devDependencies": {
+    "cypress": "^13.8.1"
+  }
+}
