@@ -1,0 +1,17 @@
+{
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "yarn run typecheck"
+    ]
+  },
+  "devDependencies": {
+    "cypress": "^13.8.1",
+    "lint-staged": "^15.2.2",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  }
+}
