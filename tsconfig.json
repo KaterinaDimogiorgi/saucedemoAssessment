@@ -2,9 +2,6 @@
   "module": "commonjs",
   "moduleResolution": "node",
   "preserveValueImports": false,
-  "exclude": ["cypress.config.ts", "cypress", "node_modules"],
-  "include": [
-    "src",
-    "./cypress.d.ts"
-  ]
+  "resolveJsonModule": true,
+  "include": [ "./node_modules/cypress", "cypress/**/*.js" ]
 }
