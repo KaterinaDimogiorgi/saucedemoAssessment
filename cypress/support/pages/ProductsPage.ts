@@ -2,7 +2,6 @@ import BurgerMenuComponent from "../components/BurgerMenuComponent";
 import ProductComponent from "../components/ProductComponent";
 import ShoppingCartComponent from "../components/ShoppingCartComponent";
 import BasePage from "./BasePage";
-import CheckoutFirstPage from "./CheckoutFirstPage";
 import ProductDetailsPage from "./ProductDetailsPage";
 import ShoppingCartPage from "./ShoppingCartPage";
 class ProductsPage extends BasePage {
@@ -10,12 +9,14 @@ class ProductsPage extends BasePage {
     private static inventoryContainerId = 'inventory_container';
 
     public shoppingCart: ShoppingCartComponent;
+    public burgerMenu: BurgerMenuComponent;
     public product: ProductComponent;
 
     constructor() {
         super();
         this.shoppingCart = new ShoppingCartComponent();
         this.product = new ProductComponent();
+        this.burgerMenu = new BurgerMenuComponent();
     }
 
     getInevtoryContainer() {
