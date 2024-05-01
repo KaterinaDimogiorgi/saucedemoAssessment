@@ -14,8 +14,8 @@ class BurgerMenuComponent {
     public resetAppState: SidebarLink;
 
     constructor() {
-        this.about = new SidebarLink(BurgerMenuComponent.allItemsType);
-        this.allItems = new SidebarLink(BurgerMenuComponent.aboutType);
+        this.about = new SidebarLink(BurgerMenuComponent.aboutType);
+        this.allItems = new SidebarLink(BurgerMenuComponent.allItemsType);
         this.logout = new SidebarLink(BurgerMenuComponent.logoutType);
         this.resetAppState = new SidebarLink(BurgerMenuComponent.resetAppStateType);
     }
@@ -31,6 +31,14 @@ class BurgerMenuComponent {
 
     selectLogout() {
         this.logout.select();
+    }
+
+    selectAllItems() {
+        this.allItems.select();
+    }
+
+    selectResetAppState() {
+        this.resetAppState.select();
     }
 }
 

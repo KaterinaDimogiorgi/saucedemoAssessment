@@ -1,0 +1,50 @@
+[
+  {
+    "userType": "standardUser",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "firstname": "Standard",
+    "lastname": "User",
+    "zipCode":  "1111"
+  },
+  {
+    "userType": "lockedOutUser",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "firstname": "LockedOut",
+    "lastname": "User",
+    "zipCode": "2222"
+  },
+  {
+    "userType": "problemUser",
+    "username": "problem_user",
+    "password": "secret_sauce",
+    "firstname": "Problem",
+    "lastname": "User",
+    "zipCode": "3333"
+  },
+  {
+    "userType": "performanceGlitchUser",
+    "username": "performance_glitch_user",
+    "password": "secret_sauce",
+    "firstname": "PerformanceGlitch",
+    "lastname": "User",
+    "zipCode": "4444"
+  },
+  {
+    "userType": "errorUser",
+    "username": "error_user",
+    "password": "secret_sauce",
+    "firstname": "Error",
+    "lastname": "User",
+    "zipCode": "5555"
+  },
+  {
+    "userType": "visualUser",
+    "username": "visual_user",
+    "password": "secret_sauce",
+    "firstname": "Visual",
+    "lastname": "User",
+    "zipCode": "6666"
+  }
+]

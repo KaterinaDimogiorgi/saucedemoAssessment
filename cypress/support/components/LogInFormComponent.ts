@@ -27,7 +27,7 @@ class LogInFormComponent {
     }
 
     public enterUserCredentials(userType: string) {
-        cy.fixture('loginData').then(testdata => {
+        cy.fixture('userData').then(testdata => {
             let user = testdata.find(d => d.userType === userType);
             this.getUsernameInputField().type(user.username);
             this.getPasswordInputField().type(user.password);

@@ -5,8 +5,6 @@ import ProductsPage from "./ProductsPage";
 class ShoppingCartPage extends BasePage {
     private static cartsContentContainerId = 'cart_contents_container';
     private static inventoryItemId = '_title_link';
-    private static removeButtonId = 'remove-';
-    private static priceBarClass = 'item_pricebar';
 
     private static continueShoppingButtonId = 'continue-shopping';
     private static checkoutButtonId = 'checkout';
@@ -25,10 +23,6 @@ class ShoppingCartPage extends BasePage {
 
     public getProductElementByName(productName: string) {
         return cy.get(`a[id$=${ShoppingCartPage.inventoryItemId}] div`).contains(productName);
-    }
-
-    public getRemoveElementByProductName(productName: string) {
-        return this.getProductElementByName(productName).siblings(`.${ShoppingCartPage.priceBarClass}`).nextUntil(`id*=${ShoppingCartPage.removeButtonId}`);
     }
 
     clickContinueShopping() {

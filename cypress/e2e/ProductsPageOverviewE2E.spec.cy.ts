@@ -1,4 +1,3 @@
-import CheckoutFirstPage from "../support/pages/CheckoutFirstPage";
 import LandingPage from "../support/pages/LandingPage";
 import ProductDetailsPage from "../support/pages/ProductDetailsPage";
 import ProductsPage from "../support/pages/ProductsPage";
