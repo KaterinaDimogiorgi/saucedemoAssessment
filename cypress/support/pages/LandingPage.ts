@@ -1,15 +1,22 @@
+import { use } from "chai";
 import LogInFormComponent from "../components/LogInFormComponent";
+import BasePage from "./BasePage";
+import ProductsPage from "./ProductsPage";
 
-class LandingPage {
-
+class LandingPage extends BasePage {
     public loginForm: LogInFormComponent;
+    public productsPage: ProductsPage;
 
     constructor() {
+        super();
         this.loginForm = new LogInFormComponent();
+        this.productsPage = new ProductsPage();
     }
-
-    login() {
-        this.loginForm.enterUsernameInputValue;
+    
+    public login(userType = "standardUser") {
+        this.loginForm.enterUserCredentials(userType);
+        this.loginForm.selectLoginButton();
+        return this.productsPage;
     }
 }
 

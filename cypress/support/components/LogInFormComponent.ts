@@ -1,10 +1,37 @@
+
 class LogInFormComponent {
     private static usernameInputFieldId = 'user-name';
-    // DO be like private static usernameInputValue = loginData.username;
-    private static usernameInputValue = 'standard_user';
+    private static passwordInputFieldId = 'password';
+    private static loginButtonId = 'login-button';
+    private static errorButton = 'error-button';
 
-    enterUsernameInputValue() {
-        cy.get(`#${LogInFormComponent.usernameInputFieldId}`).type(LogInFormComponent.usernameInputValue);
+
+    getUsernameInputField() {
+        return cy.get(`#${LogInFormComponent.usernameInputFieldId}`);
+    }
+
+    getPasswordInputField() {
+        return cy.get(`#${LogInFormComponent.passwordInputFieldId}`);
+    }
+
+    getLoginButton() {
+        return cy.get(`#${LogInFormComponent.loginButtonId}`);
+    }
+
+    getErrorButton() {
+        return cy.get(`button[data-test="${LogInFormComponent.errorButton}"]`);
+    }
+
+    selectLoginButton() {
+        this.getLoginButton().click();
+    }
+
+    public enterUserCredentials(userType: string) {
+        cy.fixture('loginData').then(testdata => {
+            let user = testdata.find(d => d.userType === userType);
+            this.getUsernameInputField().type(user.username);
+            this.getPasswordInputField().type(user.password);
+        });
     }
 }
 
