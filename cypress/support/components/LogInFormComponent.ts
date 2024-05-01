@@ -22,7 +22,7 @@ class LogInFormComponent {
         return cy.get(`button[data-test="${LogInFormComponent.errorButton}"]`);
     }
 
-    selectLoginButton() {
+    clickLoginButton() {
         this.getLoginButton().click();
     }
 

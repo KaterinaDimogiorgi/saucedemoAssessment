@@ -1,32 +1,44 @@
 import BurgerMenuComponent from "../components/BurgerMenuComponent";
-import ProductsListComponent from "../components/ProductsListComponent";
+import ProductComponent from "../components/ProductComponent";
+import ShoppingCartComponent from "../components/ShoppingCartComponent";
 import BasePage from "./BasePage";
-import LandingPage from "./LandingPage";
-
+import CheckoutFirstPage from "./CheckoutFirstPage";
+import ProductDetailsPage from "./ProductDetailsPage";
+import ShoppingCartPage from "./ShoppingCartPage";
 class ProductsPage extends BasePage {
     private static openBurgerMenuButtonId = 'react-burger-menu-btn';
+    private static inventoryContainerId = 'inventory_container';
 
-    public productsList: ProductsListComponent;
-    public burgerMenu: BurgerMenuComponent;
+    public shoppingCart: ShoppingCartComponent;
+    public product: ProductComponent;
 
     constructor() {
         super();
-        this.burgerMenu = new BurgerMenuComponent();
-        this.productsList = new ProductsListComponent();
+        this.shoppingCart = new ShoppingCartComponent();
+        this.product = new ProductComponent();
+    }
+
+    getInevtoryContainer() {
+        return cy.get(`#${ProductsPage.inventoryContainerId}`);
     }
 
     getOpenBurgerMenuButton() {
         return cy.get(`#${ProductsPage.openBurgerMenuButtonId}`);
     }
 
-    selectBurgerMenu() {
-        this.getOpenBurgerMenuButton().click();
-        return this.burgerMenu;
+    public selectProductByName(productName: string) {
+        this.product.selectProductByName(productName);
+        return new ProductDetailsPage();
     }
 
-    logout() {
-        this.selectBurgerMenu().logout.select();
-        return this;
+    openBurgerMenu() {
+        this.getOpenBurgerMenuButton().click();
+        return new BurgerMenuComponent();
+    }
+
+    clickShoppingCart() {
+        this.shoppingCart.clickShoppingCart();
+        return new ShoppingCartPage();
     }
 }
 

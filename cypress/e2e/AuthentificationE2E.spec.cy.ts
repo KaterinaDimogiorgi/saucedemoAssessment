@@ -19,7 +19,7 @@ describe('Authentification', () => {
     it('Log in as a standard user', () => {
 
         landingPage.login();
-        productsPage.productsList.getInevtoryContainer().should('be.visible');
+        productsPage.getInevtoryContainer().should('be.visible');
     });
 
     it('Log in as a lockedout user', () => {

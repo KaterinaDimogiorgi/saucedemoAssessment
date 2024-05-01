@@ -12,11 +12,11 @@ class LandingPage extends BasePage {
         this.loginForm = new LogInFormComponent();
         this.productsPage = new ProductsPage();
     }
-    
+
     public login(userType = "standardUser") {
         this.loginForm.enterUserCredentials(userType);
-        this.loginForm.selectLoginButton();
-        return this.productsPage;
+        this.loginForm.clickLoginButton();
+        return new ProductsPage();
     }
 }
 
