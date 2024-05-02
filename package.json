@@ -21,6 +21,7 @@
   "dependencies": {
     "cypress-multi-reporters": "^1.6.4",
     "eslint-plugin-chai-friendly": "^0.7.4",
-    "mochawesome-merge": "^4.3.0"
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
