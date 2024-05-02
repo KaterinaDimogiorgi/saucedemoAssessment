@@ -1,1 +1,13 @@
-//TBD
+name: Run Cypress tests on CI
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress Run
+        uses: cypress-io/github-action@v6
