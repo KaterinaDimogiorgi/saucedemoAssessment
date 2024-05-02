@@ -17,12 +17,16 @@ jobs:
 
       - name: Cypress Run
         uses: cypress-io/github-action@v6
-
-      - name: Merge and copy Mochawesome reports
+      
+      - name: Merge Mochawesome reports
         run: |
-          yarn run mochawesome-merge cypress/reports/mochawesome-report/*.json -o cypress/reports/mochawesome-report/merged-report/mochawesome.json
+          yarn run mochawesome-merge cypress/reports/mochawesome-report/*.json -o cypress/reports/mochawesome-report/output.json
+          cp -f output.json mochawesome.json
+
+      - name: Copy Mochawesome reports
+        run: |
           mkdir -p mochawesome-report
-          cp -r cypress/reports/mochawesome-report/merged-report mochawesome-report
+          cp -r cypress/reports/mochawesome-report mochawesome-report
 
       - name: Publish Mochawesome reports
         uses: actions/upload-artifact@v2
