@@ -17,11 +17,6 @@ jobs:
 
       - name: Cypress Run
         uses: cypress-io/github-action@v6
-      
-      - name: Merge Mochawesome reports
-        run: |
-          yarn mochawesome-merge > mochawesome.json
-          yarn marge mochawesome.json
 
       - name: Copy Mochawesome reports
         run: |
