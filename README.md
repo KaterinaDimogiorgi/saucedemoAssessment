@@ -45,13 +45,13 @@ yarn install
 
 Under cypress folder of the project, you may find all the e2e tests in the e2e folder.
 
-- [AuthentificationE2E.spec.cy.ts](/cypress/e2e/AuthentificationE2E.spec.cy.ts)
+- [AuthentificationE2E.spec.cy.ts](/cypress/e2e/AuthentificationE2E.spec.cy.ts) :
   Testing the login functionality of the website.
-- MenuNavigationE2E.spec.cy.ts
+- [MenuNavigationE2E.spec.cy.ts](/cypress/e2e/MenuNavigationE2E.spec.cy.ts) :
   Testing the burger menu of the website and its items.
-- OrderProductE2E.spec.cy.ts
+- [OrderProductE2E.spec.cy.ts](/cypress/e2e/OrderProductE2E.spec.cy.ts) :
   Testing the ordering of products in the website.
-- ProductsPageOverviewE2E.spec.cy.ts
+- [ProductsPageOverviewE2E.spec.cy.ts](/cypress/e2e/ProductsPageOverviewE2E.spec.cy.ts) :
   Testing the products overview and shoping cart of the website.
 
 In support folder, all page objects, components and custom commands are stored.
