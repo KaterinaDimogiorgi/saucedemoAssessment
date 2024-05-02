@@ -15,7 +15,7 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --browser chrome",
+    "cy:run": "cypress run --browser chrome --reporter mochawesome",
     "cy:run:e2e": "cypress run  --browser chrome --spec 'cypress/e2e/*.cy.ts'"
   },
   "dependencies": {
