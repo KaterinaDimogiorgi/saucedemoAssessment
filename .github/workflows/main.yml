@@ -21,7 +21,7 @@ jobs:
       - name: Copy Mochawesome reports
         run: |
           mkdir -p mochawesome-report
-          cp -r cypress/reports/mochawesome mochawesome-report
+          cp -r cypress/reports/mochawesome-report mochawesome-report
 
       - name: Publish Mochawesome reports
         uses: actions/upload-artifact@v2
