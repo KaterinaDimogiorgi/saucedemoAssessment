@@ -17,3 +17,14 @@ jobs:
 
       - name: Cypress Run
         uses: cypress-io/github-action@v6
+
+      - name: Copy Mochawesome reports
+        run: |
+          mkdir -p mochawesome-report
+          cp -r cypress/reports/mochawesome mochawesome-report
+
+      - name: Publish Mochawesome reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-report
+          path: mochawesome-report

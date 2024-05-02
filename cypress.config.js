@@ -9,6 +9,9 @@ module.exports = defineConfig({
     "retries": { "runMode": 1, "openMode": 1 },
     "chromeWebSecurity": false,
     "reporter": 'reporters/custom.js',
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
