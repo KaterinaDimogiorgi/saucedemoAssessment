@@ -20,9 +20,9 @@ jobs:
 
       - name: Merge and copy Mochawesome reports
         run: |
-          yarn run mochawesome-merge cypress/reports/mochawesome-report/*.json -o output.json
+          yarn run mochawesome-merge cypress/reports/mochawesome-report/*.json -o cypress/reports/mochawesome-report/merged-report/mochawesome.json
           mkdir -p mochawesome-report
-          cp -r cypress/reports/mochawesome-report mochawesome-report
+          cp -r cypress/reports/mochawesome-report/merged-report mochawesome-report
 
       - name: Publish Mochawesome reports
         uses: actions/upload-artifact@v2
