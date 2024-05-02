@@ -15,6 +15,6 @@ This is a cypress project implemented to provide automated testing for https://w
 
 ## Test execution
 
-## To be improved/enhance
+## To be improved/enhanced
 
 ## Useful documentation
