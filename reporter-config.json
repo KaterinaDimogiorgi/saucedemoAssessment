@@ -1,8 +1,9 @@
 {
-    "reporterEnabled": "mochawesome",
-    "mochawesomeReporterOptions": {
-        "overwrite": false,
-        "html": false,
-        "json": true
-    }
+  "reporterEnabled": "mochawesome",
+  "mochawesomeReporterOptions": {
+    "unique":  true,
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
 }
