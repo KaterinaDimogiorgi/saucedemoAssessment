@@ -3,6 +3,7 @@
 ## Description
 
 This is a cypress project implemented to provide automated testing for https://www.saucedemo.com/. 
+
 Note: Prerequisites and installation parts are for Windows. 
 
 ## Table of Contents 
