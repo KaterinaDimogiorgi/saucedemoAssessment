@@ -20,8 +20,8 @@ jobs:
       
       - name: Merge Mochawesome reports
         run: |
-          yarn run mochawesome-merge cypress/reports/mochawesome-report/*.json -o cypress/reports/mochawesome-report/output.json
-          cp -f cypress/reports/mochawesome-report/output.json cypress/reports/mochawesome-report/mochawesome.json
+          yarn mochawesome-merge > mochawesome.json
+          yarn marge mochawesome.json
 
       - name: Copy Mochawesome reports
         run: |
