@@ -13,7 +13,6 @@ Note: All nstallation parts are for Windows OS.
 - [Testing implementation approach](#testingimplementationapproach)
 - [Tests execution](#testsexecution)
 - [Github Workflow](#githubworkflows)
-- [To be improved/enhanced](#tobeimproved/enhanced)
 - [Useful documentation](#usefuldocumentation)
 
 ## Installation
