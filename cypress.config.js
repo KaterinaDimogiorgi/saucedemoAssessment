@@ -8,7 +8,10 @@ module.exports = defineConfig({
     "specPattern": "cypress/e2e/**/*.cy.ts",
     "retries": { "runMode": 1, "openMode": 1 },
     "chromeWebSecurity": false,
-    "reporter": 'reporters/custom.js',
+    "reporter": 'mochawesome',
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    },
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },

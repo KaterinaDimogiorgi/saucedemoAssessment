@@ -15,10 +15,11 @@
   },
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --browser chrome",
+    "cy:run": "cypress run --browser chrome --reporter mochawesome",
     "cy:run:e2e": "cypress run  --browser chrome --spec 'cypress/e2e/*.cy.ts'"
   },
   "dependencies": {
+    "cypress-multi-reporters": "^1.6.4",
     "eslint-plugin-chai-friendly": "^0.7.4"
   }
 }
