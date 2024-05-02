@@ -20,6 +20,7 @@ jobs:
 
       - name: Merge and copy Mochawesome reports
         run: |
+          yarn mochawesome-merge cypress/reports/mochawesome-report/*.json -o output.json
           mkdir -p mochawesome-report
           cp -r cypress/reports/mochawesome-report mochawesome-report
 
