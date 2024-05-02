@@ -18,6 +18,12 @@ class LandingPage extends BasePage {
         this.loginForm.clickLoginButton();
         return new ProductsPage();
     }
+
+    public openAndLogin(userType = "standardUser") {
+        this.open();
+        this.login(userType);
+        return new ProductsPage();
+    }
 }
 
 export default LandingPage;

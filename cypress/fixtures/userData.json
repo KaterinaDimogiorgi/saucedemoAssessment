@@ -42,7 +42,7 @@
   {
     "userType": "visualUser",
     "username": "visual_user",
-    "password": "secret_sauce",
+    "password": "wrongpassword",
     "firstname": "Visual",
     "lastname": "User",
     "zipCode": "6666"

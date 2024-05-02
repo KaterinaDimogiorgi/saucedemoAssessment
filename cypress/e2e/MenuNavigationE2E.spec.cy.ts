@@ -2,25 +2,27 @@ import LandingPage from "../support/pages/LandingPage";
 import ProductDetailsPage from "../support/pages/ProductDetailsPage";
 import ProductsPage from "../support/pages/ProductsPage";
 
+
 describe('Navigate through the menu', () => {
     const productName = 'Sauce Labs Backpack';
 
-    let landingPage = new LandingPage();
-    let productsPage = new ProductsPage();
-    let productDetailsPage = new ProductDetailsPage();
+    const landingPage = new LandingPage();
+    const productsPage = new ProductsPage();
+    const productDetailsPage = new ProductDetailsPage();
 
-    beforeEach(() => {
-        landingPage.open();
-        landingPage.login();
+    before(() => {
+        landingPage.openAndLogin();
     });
 
-    it('Open burger menu from products page and log out', () => {
+    it('Open burger menu from products details page and select all items', () => {
         productsPage.openBurgerMenu();
-        productsPage.burgerMenu.selectLogout();
-    })
+        productsPage.selectProductByName(productName);
 
-    it('Add product to cart from products details page, open burger menu and reset app state', () => {
-        productsPage.openBurgerMenu();
+        productDetailsPage.openBurgerMenu();
+        productDetailsPage.burgerMenu.selectAllItems();
+    });
+
+    it('Add product to cart from products details page and reset app state from burger menu', () => {
         productsPage.selectProductByName(productName);
 
         productDetailsPage.clickAddToCart();
@@ -28,5 +30,12 @@ describe('Navigate through the menu', () => {
         productDetailsPage.openBurgerMenu();
         productDetailsPage.burgerMenu.selectResetAppState();
         productDetailsPage.shoppingCart.getShoppingCartBadgeTotal().should('equal', '');
+        productDetailsPage.burgerMenu.clickCloseBurgerMenuButton();
+        productDetailsPage.clickBackToProducts();
+    })
+
+    it('Open burger menu from products page and log out', () => {
+        productsPage.openBurgerMenu();
+        productsPage.burgerMenu.selectLogout();
     })
 });

@@ -11,22 +11,19 @@ describe('Order a product', () => {
     const productName = 'Sauce Labs Backpack';
     const userType = 'standardUser';
 
+    const landingPage = new LandingPage();
+    const productsPage = new ProductsPage();
+    const shoppingCartPage = new ShoppingCartPage();
+    const productDetailsPage = new ProductDetailsPage();
+    const checkoutFirstPage = new CheckoutFirstPage();
+    const checkoutSecondPage = new CheckoutSecondPage();
+    const checkoutFinalPage = new CheckoutFinalPage();
 
-    let landingPage = new LandingPage();
-    let productsPage = new ProductsPage();
-    let shoppingCartPage = new ShoppingCartPage();
-    let productDetailsPage = new ProductDetailsPage();
-    let checkoutFirstPage = new CheckoutFirstPage();
-    let checkoutSecondPage = new CheckoutSecondPage();
-    let checkoutFinalPage = new CheckoutFinalPage();
-
-
-    beforeEach(() => {
-        landingPage.open();
-        landingPage.login();
+    before(() => {
+        landingPage.openAndLogin();
     });
 
-    it('Complete checkout for ordering a product', () => {
+    it('Add a product to the shopping cart and complete order', () => {
         productsPage.selectProductByName(productName);
 
         productDetailsPage.clickAddToCart();

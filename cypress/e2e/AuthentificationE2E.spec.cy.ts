@@ -2,11 +2,9 @@ import LandingPage from "../support/pages/LandingPage";
 import ProductsPage from "../support/pages/ProductsPage";
 
 
-
 describe('Authentification', () => { 
-
-    let landingPage = new LandingPage();
-    let productsPage = new ProductsPage();
+    const landingPage = new LandingPage();
+    const productsPage = new ProductsPage();
 
     beforeEach(() => {
         landingPage.open();
@@ -16,16 +14,22 @@ describe('Authentification', () => {
         cy.clearAllCookies();
     });
 
-    it('Log in as a standard user', () => {
-
+    it('Successful log in for standard user', () => {
         landingPage.login();
         productsPage.getInevtoryContainer().should('be.visible');
     });
 
-    it('Log in as a lockedout user', () => {
-        const lockedoutUSer = "lockedOutUser";
+    it('Unsuccessful log in for locked out user', () => {
+        const lockedoutUser = "lockedOutUser";
 
-        landingPage.login(lockedoutUSer);
+        landingPage.login(lockedoutUser);
+        landingPage.loginForm.getErrorButton().should('be.visible');
+    });
+
+    it('Unsuccessful log in for user with wrong password', () => {
+        const visualUser = "visualUser";
+
+        landingPage.login(visualUser);
         landingPage.loginForm.getErrorButton().should('be.visible');
     });
 });

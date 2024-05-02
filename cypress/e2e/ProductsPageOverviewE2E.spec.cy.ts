@@ -4,35 +4,32 @@ import ProductsPage from "../support/pages/ProductsPage";
 import ShoppingCartPage from "../support/pages/ShoppingCartPage";
 
 
-describe('Products page flows', () => {
+describe('Products page overview', () => {
     const productName = 'Sauce Labs Backpack';
 
+    const landingPage = new LandingPage();
+    const productsPage = new ProductsPage();
+    const shoppingCartPage = new ShoppingCartPage();
+    const productDetailsPage = new ProductDetailsPage();
 
-    let landingPage = new LandingPage();
-    let productsPage = new ProductsPage();
-    let shoppingCartPage = new ShoppingCartPage();
-    let productDetailsPage = new ProductDetailsPage();
-
-
-    beforeEach(() => {
-        landingPage.open();
-        landingPage.login();
+    before(() => {
+        landingPage.openAndLogin();
     });
 
-    it('Products list loads correctly', () => {
+    it('Products list loads correctly upon login', () => {
         productsPage.getInevtoryContainer().should('be.visible');
         productsPage.product.getProductElementByName(productName).should('be.visible');
         productsPage.getOpenBurgerMenuButton().should('be.visible');
         productsPage.shoppingCart.getShoppinCartElement().should('be.visible');
     });
 
-    it('Select a product, view details and return', () => {
+    it('Product details page loads correctly upon selecting a product', () => {
         productsPage.selectProductByName(productName);
         productDetailsPage.getInevtoryContainer().should('be.visible');
         productDetailsPage.clickBackToProducts();
     });
 
-    it('Add product to cart from product details and view cart', () => {
+    it('Shopping cart with one added product loads correctly', () => {
         productsPage.selectProductByName(productName);
         productDetailsPage.clickAddToCart();
         productDetailsPage.shoppingCart.getShoppingCartBadgeTotal().should('equal', '1');
@@ -41,10 +38,10 @@ describe('Products page flows', () => {
         shoppingCartPage.clickContinueShopping();
     });
 
-    it('Remove product from cart from product details', () => {
+    it('Shopping cart total items updated correctly upon product removal', () => {
         productsPage.selectProductByName(productName);
-        productDetailsPage.clickAddToCart();
         productDetailsPage.clickRemove();
         productDetailsPage.getAddToCartButton().should('be.visible');
+        productDetailsPage.shoppingCart.getShoppingCartBadgeTotal().should('equal', '');
     });
 });

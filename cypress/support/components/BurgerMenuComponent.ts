@@ -21,7 +21,7 @@ class BurgerMenuComponent {
     }
 
     getCloseBurgerMenuButtonElement() {
-        return cy.get(`${BurgerMenuComponent.closeBurgerMenuButtonId}`);
+        return cy.get(`#${BurgerMenuComponent.closeBurgerMenuButtonId}`);
     }
 
     clickCloseBurgerMenuButton() {
