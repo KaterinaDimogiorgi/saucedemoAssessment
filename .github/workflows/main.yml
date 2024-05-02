@@ -1,4 +1,4 @@
-name: Run Cypress tests on CI
+name: RunCypressTests
 
 on: 
  workflow_dispatch:
