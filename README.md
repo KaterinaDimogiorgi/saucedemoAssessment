@@ -4,8 +4,6 @@
 
 This is a cypress project implemented to provide automated testing for https://www.saucedemo.com/. 
 
-Note: All nstallation parts are for Windows OS. 
-
 ## Table of Contents 
 
 - [Installation](#installation)
@@ -13,7 +11,6 @@ Note: All nstallation parts are for Windows OS.
 - [Testing implementation approach](#testingimplementationapproach)
 - [Tests execution](#testsexecution)
 - [Github Workflow](#githubworkflows)
-- [Useful documentation](#usefuldocumentation)
 
 ## Installation
 
@@ -48,7 +45,7 @@ yarn install
 
 Under cypress folder of the project, you may find all the e2e tests in the e2e folder.
 
-- AuthentificationE2E.spec.cy.ts 
+- [AuthentificationE2E.spec.cy.ts](../cypress/e2e/AuthentificationE2E.spec.cy.ts)
   Testing the login functionality of the website.
 - MenuNavigationE2E.spec.cy.ts
   Testing the burger menu of the website and its items.
@@ -71,7 +68,7 @@ Example: LandingPage.ts contains all the actions and elements of the initial lan
 
 Similarly, every component of the page follows the same logic.
 
-Example: LogInFormComponent.ts contains all the actions and elements releated to the log in form of the landing page.
+Example: LogInFormComponent.ts contains all the actions and elements related to the log in form of the landing page.
 
 ## Tests execution
 
@@ -83,7 +80,7 @@ The are 2 possible ways to execute the e2e tests of the project locally.
 yarn cy:open
 ```
 
-2. Running all tests without Cypress opening, with a report at the end depicted the results.
+2. Running all tests without Cypress opening, with a report at the end depicting the results.
 
 ```bash
 yarn cy:run
@@ -104,18 +101,8 @@ and view results and reports without having to make changes to the project.
 In order to manually trigger the workflow from the repository on Github:
 
 1. Select Actions tab.
-2. On the left side bar under actions, select 'Run Cypress tests on CI' workflow. 
+2. On the left side bar under Actions, select 'Run Cypress tests on CI' workflow. 
 3. Select 'Run workflow' button on the top right of the runs grid.
 4. Confirm Run workflow on master on popup.
 5. Upon completion, select the workflow run and you may view a cypress-run summary in the bottom.
-6. Additionally, in the artifacts you may download the moachawesome report and open the included html file on your browser.
-
-
-## Useful documentation
-
-- Node.js: 
- https://nodejs.org/en/download
- https://www.geeksforgeeks.org/installation-of-node-js-on-windows/
-- Yarn: https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
-- Cypress:https://docs.cypress.io/guides/overview/why-cypress
-- Mochawesome: https://medium.com/@iMayank.Shekhar/cypress-generate-tests-reports-using-mochawesome-cf829d083d51
+6. Additionally, in the artifacts you may download the mochawesome report and open the html file.
