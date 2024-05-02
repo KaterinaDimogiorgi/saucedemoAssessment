@@ -45,7 +45,7 @@ yarn install
 
 Under cypress folder of the project, you may find all the e2e tests in the e2e folder.
 
-- [AuthentificationE2E.spec.cy.ts](../cypress/e2e/AuthentificationE2E.spec.cy.ts)
+- [AuthentificationE2E.spec.cy.ts](../cypress/e2e/AuthentificationE2E)
   Testing the login functionality of the website.
 - MenuNavigationE2E.spec.cy.ts
   Testing the burger menu of the website and its items.
